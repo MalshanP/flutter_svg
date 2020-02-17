@@ -131,8 +131,11 @@ Color parseColor(String colorString) {
   }
 
   // handle named colors ('red', 'green', etc.).
-  final Color namedColor = _namedColors[colorString];
+  Color namedColor = _namedColors[colorString];
   if (namedColor != null) {
+    return namedColor;
+  }else{
+    namedColor = const Color.fromARGB(255, 255, 255, 255);
     return namedColor;
   }
 
