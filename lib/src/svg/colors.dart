@@ -135,10 +135,9 @@ Color parseColor(String colorString) {
   if (namedColor != null) {
     return namedColor;
   }else{
-    namedColor = const Color.fromARGB(255, 255, 255, 255);
+    namedColor = const Color.fromARGB(255, 0, 128, 0);
     return namedColor;
   }
-
   throw StateError('Could not parse "$colorString" as a color.');
 }
 
