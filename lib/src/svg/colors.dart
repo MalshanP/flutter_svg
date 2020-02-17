@@ -4,6 +4,7 @@ import '../utilities/numbers.dart';
 
 /// The color black, with full opacity.
 const Color colorBlack = Color(0xFF000000);
+const Color colorGreen = Color(0xFF2fad2f);
 
 /// Converts a SVG Color String (either a # prefixed color string or a named color) to a [Color].
 Color parseColor(String colorString) {
@@ -12,7 +13,7 @@ Color parseColor(String colorString) {
   }
 
   if (colorString == 'none') {
-    return null;
+    return colorGreen;
   }
 
   // handle hex colors e.g. #fff or #ffffff.  This supports #RRGGBBAA
@@ -131,12 +132,12 @@ Color parseColor(String colorString) {
   }
 
   // handle named colors ('red', 'green', etc.).
-  Color namedColor = _namedColors[colorString];
+  final Color namedColor = _namedColors[colorString];
   if (namedColor != null) {
     return namedColor;
-  }else{
-    namedColor = const Color.fromARGB(255, 0, 128, 0);
-    return namedColor;
+//  }else{
+//    namedColor = const Color.fromARGB(255, 0, 128, 0);
+//    return namedColor;
   }
   throw StateError('Could not parse "$colorString" as a color.');
 }
